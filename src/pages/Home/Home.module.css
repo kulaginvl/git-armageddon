@@ -1,0 +1,13 @@
+.home {
+  grid-area: c;
+  background: greenyellow;
+}
+.sort {
+  display: flex;
+  justify-content: space-between;
+}
+.sortby {
+  margin-top: 11px;
+
+  display: flex;
+}

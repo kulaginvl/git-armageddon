@@ -1,0 +1,15 @@
+.header {
+  grid-area: h;
+  height: 157px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  margin-top: 8px;
+}
+.header_text {
+  width: 414px;
+}
+.header_sort {
+  display: flex;
+  margin-top: 26px;
+}
