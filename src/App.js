@@ -1,5 +1,7 @@
 import React from 'react';
 
+import axios from 'axios';
+
 import './App.css';
 
 import Header from './components/Header/Header';
@@ -8,15 +10,13 @@ import { Route } from 'react-router-dom';
 
 function App() {
   let key = 'UGpWHsh8FSadzpcYFKGkk6OoxjQPEXqx1gswS13q';
-  let date = '2015-09-08';
+  let date = '2020-09-08';
   let url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=' + date + '&api_key=' + key;
   const [asteroids, setAsteroids] = React.useState([]);
   React.useEffect(() => {
-    fetch(url)
-      .then((resp) => resp.json())
-      .then((json) => {
-        setAsteroids(json.near_earth_objects[date]);
-      });
+    axios.get(url).then(({ data }) => {
+      setAsteroids(data.near_earth_objects[date]);
+    });
   }, []);
   console.log(asteroids);
   return (

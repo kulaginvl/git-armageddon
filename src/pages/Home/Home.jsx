@@ -8,7 +8,7 @@ function Home({ items }) {
   return (
     <div className={style.home}>
       <div className={style.sort}>
-        <div>
+        <div className={style.sortdang}>
           <input type="checkbox" />
           <p>Показать только опасные</p>
         </div>

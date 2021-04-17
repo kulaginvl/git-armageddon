@@ -2,16 +2,25 @@ import React from 'react';
 import style from './SortBy.module.css';
 
 function SortBy() {
+  const types = ['в километрах', 'в дистанциях до луны'];
+  const [active, setActive] = React.useState(0);
+
+  const onSelectType = (index) => {
+    setActive(index);
+  };
+
   return (
-    <>
+    <div className={style.sort}>
       <p>Расстояние</p>
-      <div className={`${style.sort1} ${style.active}`}>
-        <p>в километрах,</p>
-      </div>
-      <div className={`${style.sort2}`}>
-        <p>в дистанциях до луны</p>
-      </div>
-    </>
+      {types.map((type, index) => (
+        <p
+          key={type}
+          onClick={() => onSelectType(index)}
+          className={active === index ? `${style.active}` : `${style.disabled}`}>
+          {type}
+        </p>
+      ))}
+    </div>
   );
 }
 

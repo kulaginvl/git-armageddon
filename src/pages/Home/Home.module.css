@@ -1,6 +1,5 @@
 .home {
   grid-area: c;
-  background: greenyellow;
 }
 .sort {
   display: flex;
@@ -8,6 +7,12 @@
 }
 .sortby {
   margin-top: 11px;
-
+}
+.sortdang {
   display: flex;
+  margin-top: 11px;
+}
+.sortdang input {
+  margin-top: 19px;
+  margin-right: 10px;
 }
