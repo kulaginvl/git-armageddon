@@ -8,11 +8,13 @@ function AsteroidBlock({
   estimated_diameter,
   is_potentially_hazardous_asteroid,
 }) {
-  console.log(close_approach_data[0]);
   return (
-    <div className={style.asteroidblock}>
+    <div
+      className={
+        is_potentially_hazardous_asteroid ? style.asteroidblockred : style.asteroidblockgreen
+      }>
       <div className={style.asteroidstats}>
-        <h1>{name}</h1>
+        <h1>{name.replace(/[()]+/g, '')}</h1>
         <div>
           <p>Дата {close_approach_data[0].close_approach_date_full}</p>
         </div>
@@ -22,11 +24,16 @@ function AsteroidBlock({
         </p>
         <p>Размер {Math.floor(estimated_diameter.meters.estimated_diameter_max)} м</p>
       </div>
-      <div>
-        <div>Оценка: {is_potentially_hazardous_asteroid ? 'Опасен' : 'Не опасен'}</div>
-      </div>
-      <div>
-        <button>На уничтожение</button>
+      <div className={style.asteroidstatus}>
+        <div>
+          <div>
+            <p>Оценка:</p>
+            <p>{is_potentially_hazardous_asteroid ? 'Опасен' : 'Не опасен'}</p>
+          </div>
+        </div>
+        <div>
+          <button>На уничтожение</button>
+        </div>
       </div>
     </div>
   );
