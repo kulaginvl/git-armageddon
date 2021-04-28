@@ -1,12 +1,19 @@
 const initialState = {
-  sortBy: 'kilometers',
+  distance: 0,
+  danger: false,
 };
 
 const filters = (state = initialState, action) => {
-  if (action.type === 'SET_SORT_BY') {
+  if (action.type === 'SET_DISTANCE') {
     return {
       ...state,
-      sortBy: action.payload,
+      distance: action.payload,
+    };
+  }
+  if (action.type === 'SHOW_DANGER') {
+    return {
+      ...state,
+      danger: !state.danger,
     };
   }
   return state;

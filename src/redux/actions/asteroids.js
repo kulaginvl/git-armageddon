@@ -1,29 +1,21 @@
-// import axios from 'axios';
+import axios from 'axios';
+let date = new Date();
+let dd = String(date.getDate()).padStart(2, '0');
+let mm = String(date.getMonth() + 1).padStart(2, '0');
+let yyyy = date.getFullYear();
+date = yyyy + '-' + mm + '-' + dd;
 
-// export const setLoaded = (payload) => ({
-//   type: 'SET_LOADED',
-//   payload,
-// });
-
-// export const asteroid = () => (dispatch) => {
-//   dispatch({
-//     type: 'SET_LOADED',
-//     payload: false,
-//   });
-
-//   axios
-//     .get(
-//       `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY`,
-//     )
-//     .then(
-//       ({ data }) => {
-//         dispatch(setAsteroids(data));
-//       },
-//       //   (response) => {
-//       //     console.log(response);
-//       //   },
-//     );
-// };
+export const fetchAsteroids = () => (dispatch) => {
+  axios
+    .get(
+      'https://api.nasa.gov/neo/rest/v1/feed?start_date=' +
+        date +
+        '&api_key=UGpWHsh8FSadzpcYFKGkk6OoxjQPEXqx1gswS13q',
+    )
+    .then(({ data }) => {
+      dispatch(setAsteroids(data.near_earth_objects[date]));
+    });
+};
 
 export const setAsteroids = (items) => ({
   type: 'SET_ASTEROIDS',

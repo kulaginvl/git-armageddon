@@ -4,13 +4,16 @@ const initialState = {
 };
 
 const asteroids = (state = initialState, action) => {
-  if (action.type === 'SET_ASTEROIDS') {
-    return {
-      ...state,
-      items: action.payload,
-    };
+  switch (action.type) {
+    case 'SET_ASTEROIDS':
+      return {
+        ...state,
+        items: action.payload,
+        isLoaded: true,
+      };
+    default:
+      return state;
   }
-  return state;
 };
 
 export default asteroids;
