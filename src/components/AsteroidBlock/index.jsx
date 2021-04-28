@@ -57,7 +57,7 @@ function AsteroidBlock({
           </div>
         </div>
         <div>
-          <Button />
+          <Button>На уничтожение</Button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-button {
+.button {
   display: inline-block;
   color: #fff;
   background: #186dd6;
@@ -8,4 +8,12 @@ button {
   height: 48px;
   border-radius: 24px;
   font-size: 16px;
+}
+.buttonheader {
+  border-style: none;
+  background: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: underline;
 }

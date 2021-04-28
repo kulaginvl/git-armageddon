@@ -1,11 +1,13 @@
 import React from 'react';
 import style from './index.module.css';
 
-function Button() {
+function Button(props) {
   return (
-    <div className={style}>
-      <button> На уничтожение</button>
-    </div>
+    <button
+      onClick={null}
+      className={`${props.header ? `${style.buttonheader}` : `${style.button}`}`}>
+      {props.children}
+    </button>
   );
 }
 
