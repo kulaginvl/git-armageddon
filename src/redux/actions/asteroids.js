@@ -13,7 +13,7 @@ export const fetchAsteroids = () => (dispatch) => {
         '&api_key=UGpWHsh8FSadzpcYFKGkk6OoxjQPEXqx1gswS13q',
     )
     .then(({ data }) => {
-      dispatch(setAsteroids(data.near_earth_objects[date]));
+      dispatch(setAsteroids([].concat.apply([], Object.values(data.near_earth_objects))));
     });
 };
 

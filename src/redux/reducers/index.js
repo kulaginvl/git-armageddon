@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 
-import filterReducer from './filters';
-import asteroidsReducer from './asteroids';
+import filters from './filters';
+import asteroids from './asteroids';
+import distriction from './distriction';
 
-const rootReducer = combineReducers({ filters: filterReducer, asteroids: asteroidsReducer });
+const rootReducer = combineReducers({
+  filters,
+  asteroids,
+  distriction,
+});
 
 export default rootReducer;

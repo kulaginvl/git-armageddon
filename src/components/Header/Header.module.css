@@ -17,3 +17,16 @@
   display: flex;
   margin-top: 26px;
 }
+.headersort a {
+  color: #000;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.headersort a:first-child {
+  margin-right: 23px;
+}
+.active {
+  text-decoration: none;
+  font-weight: bold;
+}

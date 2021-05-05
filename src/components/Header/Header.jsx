@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../Button';
+import { NavLink } from 'react-router-dom';
 
 import style from './Header.module.css';
 
@@ -12,12 +11,12 @@ function Header() {
         <p>Сервис мониторинга и уничтожения астероидов, опасно подлетающих к Земле.</p>
       </div>
       <div className={style.headersort}>
-        <Link to="/">
-          <Button header>Астероиды</Button>
-        </Link>
-        <Link to="/cart">
-          <Button header>Уничтожение</Button>
-        </Link>
+        <NavLink exact to="/" activeClassName={style.active}>
+          Астероиды
+        </NavLink>
+        <NavLink to="/cart" activeClassName={style.active}>
+          Уничтожение
+        </NavLink>
       </div>
     </div>
   );

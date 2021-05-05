@@ -4,12 +4,19 @@ import Button from '../Button';
 import style from './index.module.css';
 
 function AsteroidBlock({
+  id,
   name,
   close_approach_data,
   estimated_diameter,
   is_potentially_hazardous_asteroid,
   activeDistance,
+  onClickAddAsteroid,
 }) {
+  const handleAddAsteroid = () => {
+    const obj = { id, name, is_potentially_hazardous_asteroid };
+    onClickAddAsteroid(obj);
+  };
+
   return (
     <div
       className={
@@ -57,7 +64,7 @@ function AsteroidBlock({
           </div>
         </div>
         <div>
-          <Button>На уничтожение</Button>
+          <Button onClick={handleAddAsteroid}>На уничтожение</Button>
         </div>
       </div>
     </div>
