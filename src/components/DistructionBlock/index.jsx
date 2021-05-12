@@ -5,7 +5,6 @@ import style from './index.module.css';
 import Button from '../Button/index';
 
 function DistructionBlock({ name, dang, onRemove, id }) {
-  const onAddAsteroids = () => alert('Dobavlen asteroid!');
   const handleRemoveClick = () => {
     onRemove(id);
   };
@@ -19,7 +18,7 @@ function DistructionBlock({ name, dang, onRemove, id }) {
           </div>
           <div>
             <p> Date</p>
-            <Button onClick={handleRemoveClick} />
+            <Button onClick={handleRemoveClick}> Удалить астероид </Button>
           </div>
         </div>
       </div>

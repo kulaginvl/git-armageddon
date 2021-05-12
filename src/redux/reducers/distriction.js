@@ -28,6 +28,10 @@ const distriction = (state = initialState, action) => {
         items: newItems,
       };
     }
+    case 'CLEAR_DISTRICT':
+      return {
+        items: {},
+      };
 
     default:
       return state;

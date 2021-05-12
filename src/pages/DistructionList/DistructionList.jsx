@@ -2,7 +2,8 @@ import React from 'react';
 import DistructionBlock from '../../components/DistructionBlock/index';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem } from '../../redux/actions/distriction';
+import { removeItem, clearDistr } from '../../redux/actions/distriction';
+import Button from '../../components/Button';
 
 function DistructionList() {
   const dispatch = useDispatch();
@@ -19,19 +20,45 @@ function DistructionList() {
     }
   };
 
-  console.log(blocks, 'cart');
+  const handleClearDistrict = () => {
+    if (window.confirm('Вы действительно хотите отправить бригаду?')) {
+      setTimeout(() => {
+        dispatch(clearDistr());
+        alert(
+          'Спасательная бригада им. Брюса Уиллиса вылетела на следующие астеройды: ' +
+            `${blocks.map((obj) => obj.name)}`,
+        );
+      }, 2000);
+    }
+  };
+
+  console.log(
+    blocks.map((obj) => obj.name),
+    'cart',
+  );
 
   return (
     <div>
-      {blocks &&
-        blocks.map((obj) => (
-          <DistructionBlock
-            id={obj.id}
-            name={obj.name}
-            dang={obj.is_potentially_hazardous_asteroid}
-            onRemove={onRemoveItem}
-          />
-        ))}
+      {blocks.length > 0 ? (
+        <div>
+          {blocks.map((obj) => (
+            <DistructionBlock
+              id={obj.id}
+              key={obj.id}
+              name={obj.name}
+              dang={obj.is_potentially_hazardous_asteroid}
+              onRemove={onRemoveItem}
+            />
+          ))}
+          <Button onClick={handleClearDistrict}>
+            <span>Заказ бригады им. Брюса Уиллиса</span>
+          </Button>
+        </div>
+      ) : (
+        <div>
+          <h1>Пусто</h1>
+        </div>
+      )}
     </div>
   );
 }
