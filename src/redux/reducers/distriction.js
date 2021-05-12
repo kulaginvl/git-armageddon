@@ -16,6 +16,18 @@ const distriction = (state = initialState, action) => {
         items: newItems,
       };
     }
+    case 'REMOVE_ITEM': {
+      const newItems = {
+        ...state.items,
+      };
+
+      delete newItems[action.payload];
+
+      return {
+        ...state,
+        items: newItems,
+      };
+    }
 
     default:
       return state;
