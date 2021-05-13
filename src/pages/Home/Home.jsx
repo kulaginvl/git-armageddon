@@ -8,6 +8,7 @@ import style from './Home.module.css';
 import { setDistance, showDanger } from '../../redux/actions/filters';
 import { fetchAsteroids } from '../../redux/actions/asteroids';
 import { addAsteroidsToDistrict } from '../../redux/actions/distriction';
+import Loader from '../../components/Loader/Loader';
 
 const distanceNames = ['в километрах', 'в дистанциях до луны'];
 
@@ -40,6 +41,7 @@ function Home() {
     <div className={style.home}>
       <div className={style.sort}>
         <div className={style.sortdang}>
+          <Loader />
           <input
             type="checkbox"
             onChange={() => {

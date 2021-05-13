@@ -32,11 +32,6 @@ function DistructionList() {
     }
   };
 
-  console.log(
-    blocks.map((obj) => obj.name),
-    'cart',
-  );
-
   return (
     <div>
       {blocks.length > 0 ? (
