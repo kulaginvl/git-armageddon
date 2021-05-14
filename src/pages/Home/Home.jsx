@@ -16,6 +16,8 @@ function Home() {
   const dispatch = useDispatch();
 
   const items = useSelector(({ asteroids }) => asteroids.items);
+  const isLoaded = useSelector(({ asteroids }) => asteroids.isLoaded);
+
   const districtItems = useSelector(({ distriction }) => distriction.items);
   const { danger, distance } = useSelector(({ filters }) => filters);
   console.log(danger, distance);
@@ -41,7 +43,6 @@ function Home() {
     <div className={style.home}>
       <div className={style.sort}>
         <div className={style.sortdang}>
-          <Loader />
           <input
             type="checkbox"
             onChange={() => {
@@ -54,29 +55,28 @@ function Home() {
           <SortBy activeDistance={distance} onClickItem={onSelectDistance} types={distanceNames} />
         </div>
       </div>
-      {items &&
-        danger === true &&
-        items.map(function (obj) {
-          if (obj.is_potentially_hazardous_asteroid === true)
-            return (
+      {isLoaded
+        ? danger
+          ? items.map(function (obj) {
+              if (obj.is_potentially_hazardous_asteroid === true)
+                return (
+                  <AsteroidBlock
+                    onClickAddAsteroid={handleAddAsteroidToDistrict}
+                    key={obj.id}
+                    {...obj}
+                    activeDistance={distance}
+                  />
+                );
+            })
+          : items.map((obj) => (
               <AsteroidBlock
                 onClickAddAsteroid={handleAddAsteroidToDistrict}
                 key={obj.id}
                 {...obj}
                 activeDistance={distance}
               />
-            );
-        })}
-      {items &&
-        danger === false &&
-        items.map((obj) => (
-          <AsteroidBlock
-            onClickAddAsteroid={handleAddAsteroidToDistrict}
-            key={obj.id}
-            {...obj}
-            activeDistance={distance}
-          />
-        ))}
+            ))
+        : items.fill(0).map((_, index) => <Loader key={index} />)}
     </div>
   );
 }
