@@ -76,7 +76,9 @@ function Home() {
                 activeDistance={distance}
               />
             ))
-        : items.fill(0).map((_, index) => <Loader key={index} />)}
+        : Array(10)
+            .fill(0)
+            .map((_, index) => <Loader key={index} />)}
     </div>
   );
 }
