@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '../Button';
 
 import style from './index.module.css';
+import dino from '../../assets/img/dino.svg';
+import little from '../../assets/img/little.svg';
 
 function AsteroidBlock({
   id,
@@ -22,6 +24,14 @@ function AsteroidBlock({
       className={
         is_potentially_hazardous_asteroid ? style.asteroidblockred : style.asteroidblockgreen
       }>
+          <div className={style.pictures}>
+              <div className={style.asteroidimg}>
+                  <img src={little} alt='little'/>
+              </div>
+              <div className={style.dinoimg} >
+              <img src={dino} alt='dino'/>
+            </div>   
+          </div>
       <div className={style.asteroidstats}>
         <h1>{name.replace(/[()]+/g, '')}</h1>
         <div className={style.asteroidstatstext}>

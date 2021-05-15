@@ -22,11 +22,13 @@
 }
 .asteroidstats {
   width: 295px;
-  margin-left: 346px;
+  margin-left: 174px;
 }
 .asteroidstatstext {
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
+  line-height: 24px;
   margin-right: 5px;
   margin-top: 4px;
 }
@@ -50,4 +52,18 @@
 }
 .asteroidstatus p:last-child {
   font-weight: bold;
+}
+
+.pictures {
+  display: inline-block;
+}
+.asteroidimg {
+  position: relative;
+  left: 121px;
+  top: 27px;
+}
+.dinoimg {
+  position: relative;
+  top: 77px;
+  left: 15px;
 }
