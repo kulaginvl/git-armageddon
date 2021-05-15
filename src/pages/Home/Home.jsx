@@ -34,7 +34,7 @@ function Home() {
   const handleAddAsteroidToDistrict = (obj) => {
     dispatch(addAsteroidsToDistrict(obj));
   };
-
+  
   React.useEffect(() => {
     dispatch(fetchAsteroids());
   }, [distance, danger]);
