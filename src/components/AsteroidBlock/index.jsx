@@ -23,20 +23,17 @@ function AsteroidBlock({
 
  const distance = close_approach_data[0].miss_distance.kilometers;
  const sizeAsteroid = estimated_diameter.meters.estimated_diameter_max;
-
-
-  const handleImgAsteroid = (sizeAsteroid) => {
+    
+const handleImgAsteroid = () => {
       if (sizeAsteroid <=  85) {
-          return 'little'
+          return little;
       }
-      else if (sizeAsteroid <=  300){
-        return 'middle'
-    } else if (sizeAsteroid <=  800){
-        return 'big'
+      else if (sizeAsteroid <=  350){
+        return middle;
+    } else {
+        return big;
     }
-
   }
-  console.log(handleImgAsteroid());
 
   return (
     <div
@@ -45,7 +42,7 @@ function AsteroidBlock({
       }>
           <div className={style.pictures}>
               <div className={style.asteroidimg}>
-                  <img src={null} alt="" />
+                  <img src={handleImgAsteroid()} alt='asteroid' />
               </div>
               <div className={style.dinoimg} >
               <img src={dino} alt='dino'/>
