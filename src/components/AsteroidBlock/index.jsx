@@ -4,6 +4,8 @@ import Button from '../Button';
 import style from './index.module.css';
 import dino from '../../assets/img/dino.svg';
 import little from '../../assets/img/little.svg';
+import middle from '../../assets/img/middle.svg';
+import big from '../../assets/img/big.svg';
 
 function AsteroidBlock({
   id,
@@ -19,6 +21,23 @@ function AsteroidBlock({
     onClickAddAsteroid(obj);
   };
 
+ const distance = close_approach_data[0].miss_distance.kilometers;
+ const sizeAsteroid = estimated_diameter.meters.estimated_diameter_max;
+
+
+  const handleImgAsteroid = (sizeAsteroid) => {
+      if (sizeAsteroid <=  85) {
+          return 'little'
+      }
+      else if (sizeAsteroid <=  300){
+        return 'middle'
+    } else if (sizeAsteroid <=  800){
+        return 'big'
+    }
+
+  }
+  console.log(handleImgAsteroid());
+
   return (
     <div
       className={
@@ -26,7 +45,7 @@ function AsteroidBlock({
       }>
           <div className={style.pictures}>
               <div className={style.asteroidimg}>
-                  <img src={little} alt='little'/>
+                  <img src={null} alt="" />
               </div>
               <div className={style.dinoimg} >
               <img src={dino} alt='dino'/>
@@ -49,11 +68,11 @@ function AsteroidBlock({
           <div>
             {activeDistance === 0 && (
               <p>
-                {Math.floor(close_approach_data[0].miss_distance.kilometers).toLocaleString()} км
+                {Math.floor(distance).toLocaleString()} км
               </p>
             )}
             {activeDistance === 1 && (
-              <p>{Math.floor(close_approach_data[0].miss_distance.lunar).toLocaleString()} лун</p>
+              <p>{Math.floor(distance).toLocaleString()} лун</p>
             )}
           </div>
         </div>
