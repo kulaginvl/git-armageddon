@@ -26,14 +26,29 @@ function AsteroidBlock({
     
 const handleImgAsteroid = () => {
       if (sizeAsteroid <=  85) {
-          return little;
-      }
-      else if (sizeAsteroid <=  350){
-        return middle;
-    } else {
-        return big;
+        return (
+            <div className={style.asteroidimglittle}>
+                <img src={little} alt='little' />
+            </div>
+        )
+         } else if (sizeAsteroid <= 350) {
+             return (
+                <div className={style.asteroidimgmiddle}>
+                    <img src={middle} alt='middle' />
+                    </div>
+             )
+        } else {
+        return (
+              <div className={style.asteroidimgbig}>
+                <img src={big} alt='big' />
+              </div>
+        );
     }
   }
+
+  
+
+
 
   return (
     <div
@@ -41,9 +56,7 @@ const handleImgAsteroid = () => {
         is_potentially_hazardous_asteroid ? style.asteroidblockred : style.asteroidblockgreen
       }>
           <div className={style.pictures}>
-              <div className={style.asteroidimg}>
-                  <img src={handleImgAsteroid()} alt='asteroid' />
-              </div>
+              {handleImgAsteroid()}
               <div className={style.dinoimg} >
               <img src={dino} alt='dino'/>
             </div>   

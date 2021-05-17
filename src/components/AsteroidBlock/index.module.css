@@ -58,7 +58,16 @@
 .pictures {
   display: inline-block;
 }
-.asteroidimg {
+.asteroidimglittle {
+  position: absolute;
+  left: 382px;
+  margin-top: 27px;
+}
+.asteroidimgmiddle {
+  position: absolute;
+  left: 332px;
+}
+.asteroidimgbig {
   position: absolute;
 }
 .dinoimg {
