@@ -1,7 +1,8 @@
 .asteroidblockgreen {
   height: 200px;
   width: 920px;
-  background: linear-gradient(#cff37d, #7de88c);
+  background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
+
   margin-top: 8px;
   margin-bottom: 16px;
   display: flex;
@@ -12,7 +13,7 @@
 .asteroidblockred {
   height: 200px;
   width: 920px;
-  background: linear-gradient(#ffb199, #ff0844);
+  background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
   margin-top: 8px;
   margin-bottom: 16px;
   display: flex;

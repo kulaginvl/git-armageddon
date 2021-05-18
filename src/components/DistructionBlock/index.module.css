@@ -1,7 +1,7 @@
 .asteroidblockgreen {
   height: 100px;
   width: 920px;
-  background: linear-gradient(#cff37d, #7de88c);
+  background: linear-gradient(90deg, #cff37d 0%, #7de88c 100%);
   margin-top: 8px;
   margin-bottom: 16px;
   display: flex;
@@ -13,7 +13,7 @@
 .asteroidblockred {
   height: 100px;
   width: 920px;
-  background: linear-gradient(#ffb199, #ff0844);
+  background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
   margin-top: 8px;
   margin-bottom: 16px;
   display: flex;
@@ -22,22 +22,15 @@
   border-radius: 10px;
   cursor: pointer;
 }
-.asteroidstats {
-  width: 295px;
-  margin-left: 346px;
-}
-.asteroidstatstext {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 5px;
-  margin-top: 4px;
-}
-.asteroidstats h1 {
-  font-size: 24px;
+
+.distrtitle {
+  font-size: 20px;
   text-decoration: underline;
-  margin-bottom: 16px;
-  margin-top: 24px;
+  margin: auto 10px;
 }
-.asteroidstats p {
-  margin: 5px auto;
+.distrtext {
+  margin: 20px;
+}
+.distrbtn {
+  margin: 25px;
 }

@@ -13,6 +13,8 @@ function DistructionList() {
   const blocks = Object.keys(items).map((key) => {
     return items[key][0];
   });
+    console.log(items);
+
 
   const onRemoveItem = (id) => {
     if (window.confirm('Вы действительно хотите удалить?')) {
@@ -31,7 +33,6 @@ function DistructionList() {
       }, 2000);
     }
   };
-
   return (
     <div>
       {blocks.length > 0 ? (
@@ -42,6 +43,8 @@ function DistructionList() {
               key={obj.id}
               name={obj.name}
               dang={obj.is_potentially_hazardous_asteroid}
+              size={obj.sizeAsteroid}
+              distance={obj.distance}
               onRemove={onRemoveItem}
             />
           ))}

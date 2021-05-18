@@ -17,7 +17,7 @@ function AsteroidBlock({
   onClickAddAsteroid,
 }) {
   const handleAddAsteroid = () => {
-    const obj = { id, name, is_potentially_hazardous_asteroid };
+    const obj = { id, name, is_potentially_hazardous_asteroid,sizeAsteroid,distance };
     onClickAddAsteroid(obj);
   };
 
