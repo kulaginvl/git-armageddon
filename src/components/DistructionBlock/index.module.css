@@ -1,5 +1,5 @@
 .asteroidblockgreen {
-  height: 200px;
+  height: 100px;
   width: 920px;
   background: linear-gradient(#cff37d, #7de88c);
   margin-top: 8px;
@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 .asteroidblockred {
-  height: 200px;
+  height: 100px;
   width: 920px;
   background: linear-gradient(#ffb199, #ff0844);
   margin-top: 8px;
@@ -40,16 +40,4 @@
 }
 .asteroidstats p {
   margin: 5px auto;
-}
-
-.asteroidstatus {
-  margin-top: 26px;
-  margin-right: 20px;
-  text-align: center;
-}
-.asteroidstatus {
-  line-height: 8px;
-}
-.asteroidstatus p:last-child {
-  font-weight: bold;
 }

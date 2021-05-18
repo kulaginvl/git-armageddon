@@ -10,18 +10,27 @@ function DistructionBlock({ name, dang, onRemove, id }) {
   };
   return (
     <div className={dang ? style.asteroidblockred : style.asteroidblockgreen}>
-      <div className={style.asteroidstats}>
-        <h1>{name.replace(/[()]+/g, '')}</h1>
+      
+        {/* <h1>{name.replace(/[()]+/g, '')}</h1>
         <div className={style.asteroidstatstext}>
           <div>
             <p>Дата</p>
           </div>
-          <div>
-            <p> Date</p>
-            <Button onClick={handleRemoveClick}> Удалить астероид </Button>
-          </div>
+          
         </div>
-      </div>
+        <div>
+            <Button onClick={handleRemoveClick}> Удалить астероид </Button>
+          </div> */}
+          <div>
+              <h1>{name.replace(/[()]+/g, '')}</h1>
+          </div>
+          <div>
+            <span>Расстояние</span>
+            <span>Размер</span>
+         
+          </div>
+
+     
     </div>
   );
 }

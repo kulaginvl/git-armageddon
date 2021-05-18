@@ -47,10 +47,9 @@
   margin-top: 26px;
   margin-right: 20px;
   text-align: center;
-}
-.asteroidstatus {
   line-height: 8px;
 }
+
 .asteroidstatus p:last-child {
   font-weight: bold;
 }

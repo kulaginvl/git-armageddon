@@ -46,10 +46,6 @@ const handleImgAsteroid = () => {
     }
   }
 
-  
-
-
-
   return (
     <div
       className={
@@ -91,7 +87,7 @@ const handleImgAsteroid = () => {
             <p>Размер</p>
           </div>
           <div>
-            <p> {Math.floor(estimated_diameter.meters.estimated_diameter_max)} м</p>
+            <p> {Math.floor(sizeAsteroid)} м</p>
           </div>
         </div>
       </div>
